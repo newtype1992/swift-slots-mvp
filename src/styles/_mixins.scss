@@ -1,0 +1,22 @@
+@mixin card-surface {
+  background: $color-card;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-soft;
+}
+
+@mixin pill {
+  border-radius: $radius-pill;
+  padding: 0.35rem 0.9rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+@mixin gradient-band {
+  background: $gradient-aqua;
+  color: #0f172a;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-soft;
+}

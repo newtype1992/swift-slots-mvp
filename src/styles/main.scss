@@ -1,0 +1,135 @@
+@import './variables';
+@import './bulma-overrides';
+@import 'bulma/bulma';
+@import './mixins';
+
+:root {
+  font-family: $font-family;
+  color: $color-slate;
+  background-color: $color-light;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  background: $color-light;
+}
+
+a {
+  color: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.hero-band {
+  @include gradient-band;
+  padding: $spacing-12;
+}
+
+.metric-card {
+  @include card-surface;
+  padding: $spacing-6;
+  text-align: center;
+  h4 {
+    margin-bottom: 0.35rem;
+    color: $color-ink;
+    font-size: 1.25rem;
+  }
+  p {
+    margin: 0;
+    color: $color-muted;
+  }
+}
+
+.stat-card {
+  @include card-surface;
+  padding: $spacing-4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-ink;
+  }
+  .stat-label {
+    color: $color-muted;
+    font-size: 0.95rem;
+  }
+}
+
+.deal-card {
+  @include card-surface;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 28px rgba(15, 23, 42, 0.14);
+  }
+}
+
+.badge {
+  @include pill;
+  background: rgba(255, 119, 89, 0.12);
+  color: $color-coral;
+  font-size: 0.85rem;
+}
+
+.pill-tag {
+  @include pill;
+  background: rgba(46, 197, 206, 0.12);
+  color: $color-aqua;
+  font-size: 0.85rem;
+}
+
+.button.is-primary {
+  box-shadow: 0 12px 18px rgba(255, 119, 89, 0.25);
+}
+
+.section-light {
+  background: $color-light;
+  padding: $spacing-12 0;
+}
+
+.section-card-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: $spacing-4;
+}
+
+.cta-band {
+  @include gradient-band;
+  padding: $spacing-8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-6;
+  flex-wrap: wrap;
+}
+
+.booking-card {
+  @include card-surface;
+  padding: $spacing-4;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3;
+}
+
+.table-slot-status {
+  @include pill;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+}
