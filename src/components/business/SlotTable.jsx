@@ -12,8 +12,8 @@ const SlotTable = () => {
   };
 
   return (
-    <div className="table-container">
-      <table className="table is-fullwidth">
+    <div className="managed-slots">
+      <table className="table is-fullwidth managed-slots__table">
         <thead>
           <tr>
             <th>Class</th>

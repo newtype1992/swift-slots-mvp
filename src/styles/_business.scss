@@ -1,0 +1,40 @@
+.managed-slots {
+  @include card-surface;
+  padding: 0;
+  overflow: hidden;
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    background: transparent;
+    margin: 0;
+
+    thead {
+      background: $color-ink;
+      color: #fff;
+    }
+
+    th,
+    td {
+      padding: $space-4 $space-5;
+      border: none;
+    }
+
+    tbody tr {
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+
+    tbody tr:not(:last-child) td {
+      border-bottom: 1px solid $color-border-subtle;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .managed-slots__table th,
+  .managed-slots__table td {
+    padding: $space-3 $space-4;
+    font-size: $font-size-sm;
+  }
+}
