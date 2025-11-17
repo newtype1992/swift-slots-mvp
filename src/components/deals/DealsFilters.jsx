@@ -29,19 +29,19 @@ const DealsFilters = ({ filters, onChange }) => {
           <p className="has-text-weight-semibold">Day</p>
           <div className="buttons has-addons">
             <button
-              className={`button ${filters.day === 'today' ? 'is-primary' : ''}`}
+              className={`btn ${filters.day === 'today' ? 'btn-primary' : 'btn-secondary'}`}
               onClick={() => setFilter('day', 'today')}
             >
               Today
             </button>
             <button
-              className={`button ${filters.day === 'week' ? 'is-primary' : ''}`}
+              className={`btn ${filters.day === 'week' ? 'btn-primary' : 'btn-secondary'}`}
               onClick={() => setFilter('day', 'week')}
             >
               This Week
             </button>
             <button
-              className={`button ${!filters.day ? 'is-primary is-light' : ''}`}
+              className={`btn ${!filters.day ? 'btn-primary' : 'btn-secondary'}`}
               onClick={() => setFilter('day', '')}
             >
               All

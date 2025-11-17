@@ -24,13 +24,13 @@ const BrowseDealsPage = () => {
           <div className="level-right">
             <div className="buttons has-addons">
               <button
-                className={`button ${filters.day === 'today' ? 'is-primary' : ''}`}
+                className={`btn ${filters.day === 'today' ? 'btn-primary' : 'btn-secondary'}`}
                 onClick={() => setFilters({ ...filters, day: 'today' })}
               >
                 Today
               </button>
               <button
-                className={`button ${filters.day === 'week' ? 'is-primary' : ''}`}
+                className={`btn ${filters.day === 'week' ? 'btn-primary' : 'btn-secondary'}`}
                 onClick={() => setFilters({ ...filters, day: 'week' })}
               >
                 This Week

@@ -61,10 +61,10 @@ const BookingModal = ({ slot, onClose, onConfirm }) => {
               <p className="is-size-4 has-text-weight-semibold">You’re in!</p>
               <p>We saved your spot. Show this screen at check-in.</p>
               <div className="buttons is-centered" style={{ marginTop: '1rem' }}>
-                <Link className="button is-primary" to="/bookings" onClick={onClose}>
+                <Link className="btn btn-primary" to="/bookings" onClick={onClose}>
                   View My Bookings
                 </Link>
-                <button className="button" onClick={onClose}>
+                <button className="btn btn-secondary" onClick={onClose}>
                   Back to deals
                 </button>
               </div>

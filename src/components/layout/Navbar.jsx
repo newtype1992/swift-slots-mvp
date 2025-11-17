@@ -42,15 +42,16 @@ const Navbar = () => {
 
         <div className="navbar-end" style={{ alignItems: 'center', gap: '1rem' }}>
           <div className="navbar-item is-hidden-touch">
-            <button
-              className="button is-white"
+            <Button
+              variant="ghost"
+              size="small"
               onClick={() => setShowNotifications((prev) => !prev)}
               aria-label="Notifications"
             >
               <span className="icon is-small">
                 <FaBell />
               </span>
-            </button>
+            </Button>
             {showNotifications && (
               <div className="card" style={{ position: 'absolute', right: '1.5rem', width: '280px', zIndex: 10 }}>
                 <div className="card-content" style={{ display: 'grid', gap: '0.5rem' }}>

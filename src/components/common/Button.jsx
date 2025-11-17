@@ -8,12 +8,9 @@ import classNames from 'classnames';
  * @param {React.ReactNode} props.children
  */
 const Button = ({ variant = 'primary', size = 'normal', children, className, ...rest }) => {
-  const classes = classNames('button', className, {
-    'is-primary': variant === 'primary',
-    'is-link is-light': variant === 'secondary',
-    'is-dark is-light': variant === 'ghost',
-    'is-small': size === 'small',
-    'is-medium': size === 'large',
+  const classes = classNames('btn', `btn-${variant}`, className, {
+    'btn--sm': size === 'small',
+    'btn--lg': size === 'large',
   });
 
   return (
