@@ -14,13 +14,19 @@ const timeUntil = (start) => {
 };
 
 const DealCard = ({ slot, onSelect }) => {
+  const placeholderImage =
+    'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80';
+  const imageUrl = slot.imageUrl || slot.image || placeholderImage;
+
   return (
     <div className="deal-card">
-      <div style={{ position: 'relative' }}>
+      <div className="deal-card__media">
         <img
-          src={slot.image}
+          src={imageUrl}
           alt={slot.title}
-          style={{ width: '100%', height: '180px', objectFit: 'cover' }}
+          onError={(e) => {
+            if (e.currentTarget.src !== placeholderImage) e.currentTarget.src = placeholderImage;
+          }}
         />
         <div style={{ position: 'absolute', top: '12px', right: '12px' }}>
           <Badge>{`${slot.discount}% OFF`}</Badge>

@@ -1,11 +1,23 @@
+const now = new Date();
+
+const timeInDays = (daysFromNow, hour = 7, minute = 0, durationMinutes = 50) => {
+  const start = new Date(now);
+  start.setDate(now.getDate() + daysFromNow);
+  start.setHours(hour, minute, 0, 0);
+  const end = new Date(start.getTime() + durationMinutes * 60 * 1000);
+  return {
+    startTime: start.toISOString(),
+    endTime: end.toISOString(),
+  };
+};
+
 export const slotsMock = [
   {
     id: 'slot-1',
     title: 'Sunrise Vinyasa Flow',
     businessName: 'Pure Yoga Studio',
     category: 'Yoga',
-    startTime: '2025-01-06T07:15:00',
-    endTime: '2025-01-06T08:05:00',
+    ...timeInDays(0, 7, 15, 50),
     price: 24,
     originalPrice: 48,
     discount: 50,
@@ -21,8 +33,7 @@ export const slotsMock = [
     title: 'Power Lunch HIIT',
     businessName: 'Pulse Lab Fitness',
     category: 'HIIT',
-    startTime: '2025-01-06T12:30:00',
-    endTime: '2025-01-06T13:00:00',
+    ...timeInDays(0, 12, 30, 30),
     price: 18,
     originalPrice: 36,
     discount: 50,
@@ -38,8 +49,7 @@ export const slotsMock = [
     title: 'Reformer Pilates Intro',
     businessName: 'Core Collective',
     category: 'Pilates',
-    startTime: '2025-01-07T09:30:00',
-    endTime: '2025-01-07T10:20:00',
+    ...timeInDays(1, 9, 30, 50),
     price: 30,
     originalPrice: 60,
     discount: 50,
@@ -55,8 +65,7 @@ export const slotsMock = [
     title: 'Deep Tissue Reset',
     businessName: 'Revive Bodywork',
     category: 'Massage',
-    startTime: '2025-01-06T17:30:00',
-    endTime: '2025-01-06T18:30:00',
+    ...timeInDays(0, 17, 30, 60),
     price: 65,
     originalPrice: 110,
     discount: 40,
@@ -72,8 +81,7 @@ export const slotsMock = [
     title: 'Evening Spin Express',
     businessName: 'Velocity Cycle Club',
     category: 'Cycling',
-    startTime: '2025-01-06T18:15:00',
-    endTime: '2025-01-06T19:00:00',
+    ...timeInDays(0, 18, 15, 45),
     price: 22,
     originalPrice: 44,
     discount: 50,
@@ -89,8 +97,7 @@ export const slotsMock = [
     title: 'Restorative Yin',
     businessName: 'Bliss Yoga Loft',
     category: 'Yoga',
-    startTime: '2025-01-08T19:30:00',
-    endTime: '2025-01-08T20:30:00',
+    ...timeInDays(2, 19, 30, 60),
     price: 20,
     originalPrice: 40,
     discount: 50,
@@ -106,8 +113,7 @@ export const slotsMock = [
     title: 'Boxing Fundamentals',
     businessName: 'Southpaw Studio',
     category: 'Boxing',
-    startTime: '2025-01-07T18:00:00',
-    endTime: '2025-01-07T19:00:00',
+    ...timeInDays(1, 18, 0, 60),
     price: 26,
     originalPrice: 52,
     discount: 50,
@@ -123,8 +129,7 @@ export const slotsMock = [
     title: 'Mobility & Stretch Lab',
     businessName: 'Move Better Co.',
     category: 'Recovery',
-    startTime: '2025-01-05T17:00:00',
-    endTime: '2025-01-05T17:45:00',
+    ...timeInDays(3, 17, 0, 45),
     price: 16,
     originalPrice: 32,
     discount: 50,
@@ -140,8 +145,7 @@ export const slotsMock = [
     title: 'Lunchtime Strength Lab',
     businessName: 'Lift Society',
     category: 'Strength',
-    startTime: '2025-01-06T13:00:00',
-    endTime: '2025-01-06T13:50:00',
+    ...timeInDays(4, 13, 0, 50),
     price: 28,
     originalPrice: 56,
     discount: 50,
@@ -157,8 +161,7 @@ export const slotsMock = [
     title: 'Express Barre Sculpt',
     businessName: 'Studio Elevate',
     category: 'Barre',
-    startTime: '2025-01-05T16:30:00',
-    endTime: '2025-01-05T17:10:00',
+    ...timeInDays(5, 16, 30, 40),
     price: 19,
     originalPrice: 38,
     discount: 50,
