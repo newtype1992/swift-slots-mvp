@@ -1,11 +1,23 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import HeroSection from '../components/layout/HeroSection';
 import PillTag from '../components/common/PillTag';
 import Button from '../components/common/Button';
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const shouldScroll =
+      location.hash === '#how-it-works' || location.state?.scrollTo === 'how-it-works';
+    if (shouldScroll) {
+      document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' });
+      if (location.state?.scrollTo) {
+        navigate(location.pathname, { replace: true, state: {} });
+      }
+    }
+  }, [location, navigate]);
 
   return (
     <div>
